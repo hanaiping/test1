@@ -1,0 +1,8 @@
+/target/
+*.idea
+*.iml
+logs/
+src/main/java/META-INF/MANIFEST.MF
+*.settings
+*.classpath
+*.project

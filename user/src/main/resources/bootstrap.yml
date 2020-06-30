@@ -3,7 +3,49 @@ server:
 spring:
   application:
     name: user-center
-
+  datasource:
+    druid:
+      druidClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://42.51.1.30:3308/rrk-dev-user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+      username: root
+      password: wpx120516
+      maxActive: 30
+      minIdle: 5
+      maxWait: 10000
+      validationgQuery: SELECT 'X'
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+  redis:
+    host: local.redis.com
+    port: 6379
+    password: wpx120516
+    timeout: 10s
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
+  rabbitmq:
+    host: local.rabbitmq.com
+    port: 5672
+    username: cloud-dev
+    password: cloud-dev
+    virtual-host: /
+    publisher-returns: true
+    publisher-confirms: true
+    template:
+      retry:
+        enabled: true
+      mandatory: true
+    listener:
+      simple:
+        acknowledge-mode: manual
+logging:
+  level:
+    root: info
+    com.cloud: debug
+  file: logs/${spring.application.name}.log
   #驼峰处理
   mybatis:
     configuration:

@@ -5,13 +5,12 @@
     <parent>
         <artifactId>testpro1</artifactId>
         <groupId>com.hap</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <properties>
         <commons-io.version>2.6</commons-io.version>
         <jasypt.version>1.18</jasypt.version>
-
     </properties>
 
     <artifactId>common</artifactId>
@@ -82,6 +81,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

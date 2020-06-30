@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rrk.common.center.modules.user.dao.TbUserInfoMapper">
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hap.common.center.modules.user.entity.TbUserInfo">
+        <id column="user_id" property="userId"/>
+        <result column="code_id" property="codeId"/>
+        <result column="codeid_status" property="codeidStatus"/>
+        <result column="user_type" property="userType"/>
+        <result column="grade" property="grade"/>
+        <result column="recommend_id" property="recommendId"/>
+        <result column="reg_type" property="regType"/>
+        <result column="uuid" property="uuid"/>
+        <result column="app_id" property="appId"/>
+        <result column="open_id" property="openId"/>
+        <result column="union_id" property="unionId"/>
+        <result column="user_name" property="userName"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="real_name" property="realName"/>
+        <result column="password" property="password"/>
+        <result column="mobile" property="mobile"/>
+        <result column="gender" property="gender"/>
+        <result column="age" property="age"/>
+        <result column="id_card" property="idCard"/>
+        <result column="pay_password" property="payPassword"/>
+        <result column="src_face" property="srcFace"/>
+        <result column="job" property="job"/>
+        <result column="school" property="school"/>
+        <result column="email" property="email"/>
+        <result column="constellation" property="constellation"/>
+        <result column="cover" property="cover"/>
+        <result column="signature" property="signature"/>
+        <result column="birthday" property="birthday"/>
+        <result column="salt" property="salt"/>
+        <result column="pay_salt" property="paySalt"/>
+        <result column="device_id" property="deviceId"/>
+        <result column="location_id" property="locationId"/>
+        <result column="address" property="address"/>
+        <result column="burse_id" property="burseId"/>
+        <result column="status" property="status"/>
+        <result column="certification_status" property="certificationStatus"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        user_id, code_id, codeid_status, user_type, grade, recommend_id, reg_type, uuid, app_id, open_id, union_id, user_name, nick_name, real_name, password, mobile, gender, age, id_card, pay_password, src_face, job, school, email, constellation, cover, signature, birthday, salt, pay_salt, device_id, location_id, address, burse_id, status,certification_status, del_flag, create_time, update_time, remark
+    </sql>
+
+    <delete id="deleteMemberAll" statementType="CALLABLE" parameterType="java.lang.String">
+        {
+         call del_data_user_copy1 (
+         #{phone,jdbcType=VARCHAR,mode=IN})
+        }
+    </delete>
+</mapper>

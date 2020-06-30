@@ -509,7 +509,7 @@ public class StringUtil {
     public static String removeSpaces(String str){
         return str.replaceAll("\\s*","");
     }
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         //   boolean mobileNO = StringUtil.isMobileNO("+8617314995124");
         //  System.out.println(mobileNO);
         System.out.println("hello");
@@ -540,7 +540,7 @@ public class StringUtil {
         for(String str:url){
             System.out.println(str+"   " +uris+":"+matcher.match(str,uris));
         }
-    }
+    }*/
 
     /**
      * 下划线转驼峰

@@ -374,7 +374,7 @@ public class JwtHelper {
         Claims c=  JwtHelper.getClaimsFromToken(s);
         System.out.println("userId:"+c.get("userId"));
         System.out.println("supplierId:"+c.get("supplierId"));
-//        
+//
         //普通用户
        //String a=createJwt(1L,"1", APP_EXPIRE_TIME);
 
